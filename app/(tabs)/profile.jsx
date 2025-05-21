@@ -11,6 +11,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { colors } from "@/constants";
 import { Image } from "expo-image";
 import { FlatList } from "react-native";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 import EditProfileModal from "@/components/editProfile";
 import Modal from "react-native-modal"; // if not already installed: `npm i react-native-modal`
@@ -76,7 +77,11 @@ const Profile = () => {
                 ? { uri: profile.profilePictureUrl }
                 : require("@/assets/images/defaultprofile.png")
             }
-            style={{ width: 150, height: 150, borderRadius: 100 }}
+            style={{
+              width: width * 0.2,
+              height: width * 0.2,
+              borderRadius: 100,
+            }}
           />
           <View style={styles.followContainer}>
             <Text style={styles.fullName}>{profile.fullName}</Text>
@@ -114,7 +119,7 @@ const Profile = () => {
           ListEmptyComponent={
             <Text
               style={{
-                fontSize: 20,
+                fontSize: RFPercentage(3),
                 textAlign: "center",
                 marginTop: 20,
                 color: colors.secondary,
@@ -161,7 +166,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.BACKGROUND_DARK,
   },
   titleText: {
-    fontSize: 40,
+    fontSize: RFPercentage(4),
     fontWeight: "bold",
     color: colors.PRIMARY,
   },
@@ -175,7 +180,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   fullName: {
-    fontSize: 30,
+    fontSize: RFPercentage(2.8),
     color: colors.PRIMARY,
     fontWeight: "bold",
   },
@@ -185,7 +190,7 @@ const styles = StyleSheet.create({
   },
   followText: {
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: RFPercentage(1.7),
   },
   editProfileButton: {
     paddingHorizontal: 20,
@@ -202,21 +207,21 @@ const styles = StyleSheet.create({
   bio: {
     marginTop: 20,
     marginLeft: 30,
-    fontSize: 16,
+    fontSize: RFPercentage(1.5),
     fontWeight: "bold",
-    width: 300,
+    width: width * 0.7,
     letterSpacing: 1,
   },
   editProfile: {
     color: "#fff",
-    fontSize: 20,
+    fontSize: RFPercentage(2),
     fontWeight: "bold",
   },
   profilePostSection: {
     marginTop: 50,
   },
   postTextStyle: {
-    fontSize: 25,
+    fontSize: RFPercentage(3),
     color: colors.PRIMARY,
     fontWeight: "bold",
     marginLeft: 20,
