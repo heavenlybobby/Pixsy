@@ -9,7 +9,6 @@ import React, { useContext, useEffect, useState, useCallback } from "react";
 
 import { AuthContext } from "@/context/AuthContext";
 import { Redirect, router } from "expo-router";
-import { Image } from "expo-image";
 import { colors } from "@/constants";
 import { Ionicons } from "@expo/vector-icons";
 import { useFocusEffect } from "@react-navigation/native";
@@ -120,7 +119,13 @@ export default function Feed() {
         </TouchableOpacity>
       </View>
 
-      <Posts posts={posts} user={user} />
+      <Posts
+        posts={posts}
+        user={user}
+        toggleLikePost={toggleLikePost}
+        setSelectedPost={setSelectedPost}
+        setShowComments={setShowComments}
+      />
     </View>
   );
 }

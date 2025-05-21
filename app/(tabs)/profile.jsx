@@ -17,6 +17,7 @@ import EditProfileModal from "@/components/editProfile";
 import Modal from "react-native-modal"; // if not already installed: `npm i react-native-modal`
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
+import ProfilePosts from "../../components/profilePosts";
 
 const { width, height } = Dimensions.get("window");
 
@@ -113,31 +114,8 @@ const Profile = () => {
       </View>
       <View style={styles.profilePostSection}>
         <Text style={styles.postTextStyle}>Posts</Text>
-        <FlatList
-          data={profile.post}
-          numColumns={3}
-          ListEmptyComponent={
-            <Text
-              style={{
-                fontSize: RFPercentage(3),
-                textAlign: "center",
-                marginTop: 20,
-                color: colors.secondary,
-              }}
-            >
-              No post yet
-            </Text>
-          }
-          keyExtractor={(item) => item._id}
-          renderItem={({ item }) => (
-            <View style={styles.profilePostContainer}>
-              <Image
-                source={{ uri: item.imageUrl }}
-                style={{ width: width * 0.33, height: 200 }}
-              />
-            </View>
-          )}
-        />
+
+        <ProfilePosts profile={profile} />
       </View>
 
       <Modal isVisible={isEditing} onBackdropPress={() => setIsEditing(false)}>
@@ -225,11 +203,6 @@ const styles = StyleSheet.create({
     color: colors.PRIMARY,
     fontWeight: "bold",
     marginLeft: 20,
-  },
-  profilePostContainer: {
-    flexDirection: "row",
-    marginHorizontal: width * 0.01,
-    marginTop: 10,
   },
 });
 

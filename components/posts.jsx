@@ -15,7 +15,13 @@ import { formatDistanceToNow } from "date-fns";
 
 const { width, height } = Dimensions.get("window");
 
-export default function Posts({ posts, user }) {
+export default function Posts({
+  posts,
+  user,
+  toggleLikePost,
+  setSelectedPost,
+  setShowComments,
+}) {
   return (
     <FlatList
       data={posts}
