@@ -14,6 +14,7 @@ import { Ionicons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 import { colors } from "@/constants";
 import { AuthContext } from "@/context/AuthContext";
+import { RFPercentage } from "react-native-responsive-fontsize";
 
 const { width } = Dimensions.get("window");
 
@@ -157,7 +158,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   headerText: {
-    fontSize: 24,
+    fontSize: RFPercentage(2.8),
     fontWeight: "bold",
     color: colors.PRIMARY,
   },
@@ -180,7 +181,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 15,
     marginBottom: 15,
-    fontSize: 16,
+    fontSize: RFPercentage(1.5),
   },
   saveButton: {
     backgroundColor: colors.PRIMARY,
@@ -192,10 +193,10 @@ const styles = StyleSheet.create({
   saveText: {
     color: "#fff",
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: RFPercentage(2),
   },
   label: {
-    fontSize: 16,
+    fontSize: RFPercentage(1.7),
     fontWeight: "600",
     marginBottom: 5,
     marginTop: 10,
