@@ -21,23 +21,6 @@ import { loginSchema } from "../../lib/validators/login-schema";
 export default function Login() {
   const { login } = useContext(AuthContext);
 
-  // const {
-  //   handleSubmit,
-  //   register,
-  //   formState: { errors, isSubmitting },
-  //   reset,
-  // } = useForm({
-  //   defaultValues: {
-  //     email: "",
-  //     password: "",
-  //   },
-  //   resolver: zodResolver(loginSchema),
-  // });
-
-  // const onSubmit = async (data) => {
-  //   console.log(data);
-  // };
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);

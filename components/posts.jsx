@@ -81,7 +81,7 @@ export default function Posts({
                     name={
                       item.likes.includes(user._id) ? "heart" : "heart-outline"
                     }
-                    size={35}
+                    size={RFPercentage(2.5)}
                     color={colors.PRIMARY}
                   />
                 </TouchableOpacity>
@@ -104,7 +104,7 @@ export default function Posts({
                 >
                   <Ionicons
                     name="chatbubble-ellipses-outline"
-                    size={30}
+                    size={RFPercentage(2.5)}
                     color={colors.PRIMARY}
                   />
                 </TouchableOpacity>
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     color: colors.PRIMARY,
   },
   captionText: {
-    fontSize: RFPercentage(1.6),
+    fontSize: RFPercentage(1.8),
     width: "98%",
   },
   creator: {

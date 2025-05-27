@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     fontSize: RFPercentage(1.5),
     fontWeight: "bold",
-    width: width * 0.7,
+    width: width * 0.9,
     letterSpacing: 1,
   },
   editProfile: {
